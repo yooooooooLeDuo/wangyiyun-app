@@ -1,9 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view/>
+  <MUsicControl></MUsicControl>
+  <ItemPopup></ItemPopup>
 </template>
 
 <style lang="less">
@@ -15,16 +13,29 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  vertical-align: -0.15rem;
+  fill: currentColor;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+
 </style>
+<script>
+import MUsicControl from "@/components/global/MusicControl";
+import ItemPopup from "@/components/musicItem/ItemPopup";
+export default {
+  components: {ItemPopup, MUsicControl}
+}
+</script>
